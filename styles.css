@@ -691,7 +691,7 @@ section {
 
 .about__grid {
   display: grid;
-  grid-template-columns: 1.6fr 0.4fr;
+  grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
 }
@@ -766,7 +766,7 @@ section {
 
 .stat-card__number {
   font-family: var(--font-heading);
-  font-size: 48px;
+  font-size: 64px;
   font-weight: 800;
   background: linear-gradient(135deg, var(--accent), var(--copper));
   -webkit-background-clip: text;
