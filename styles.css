@@ -18,6 +18,11 @@
   --bg-navbar: rgba(12, 14, 25, 0.85);
 
   --accent: #F97316;
+
+  /* Scroll behavior */
+  scroll-behavior: smooth;
+  scroll-padding-top: 250px;
+  /* Offset for sticky header */
   --accent-hover: #FB923C;
   --accent-glow: rgba(249, 115, 22, 0.2);
   --copper: #E8A87C;
