@@ -81,19 +81,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ========== Smooth anchor scroll ==========
   // ========== Smooth anchor scroll (Disabled to use CSS) ==========
-  // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  //   anchor.addEventListener('click', (e) => {
-  //     const targetId = anchor.getAttribute('href');
-  //     if (targetId === '#') return;
-  //     const target = document.querySelector(targetId);
-  //     if (target) {
-  //       e.preventDefault();
-  //       const offset = navbar.offsetHeight + 220;
-  //       const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-  //       window.scrollTo({ top, behavior: 'smooth' });
-  //     }
-  //   });
-  // });
+  // ========== Smooth anchor scroll for Services button ==========
+  const servicesBtn = document.querySelector('a[href="#services-grid"]');
+  if (servicesBtn) {
+    servicesBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector('#services-grid');
+      if (target) {
+        // 100px offset for header
+        const offset = 250;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  }
 
   // ========== Scroll fade-in animations ==========
   const fadeObserver = new IntersectionObserver(

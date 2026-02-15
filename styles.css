@@ -20,8 +20,6 @@
   --accent: #F97316;
 
   /* Scroll behavior */
-  scroll-behavior: smooth;
-  scroll-padding-top: 250px;
   /* Offset for sticky header */
   --accent-hover: #FB923C;
   --accent-glow: rgba(249, 115, 22, 0.2);
