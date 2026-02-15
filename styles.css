@@ -781,6 +781,38 @@ section {
   color: var(--text-muted);
 }
 
+
+/* About Mission */
+.about__mission {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 0.78fr;
+  gap: 48px;
+  margin-top: 80px;
+}
+
+.about__mission-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.about__mission-text {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .about__mission {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+
+}
+
 /* ============================================
    Process / Timeline Section
    ============================================ */
@@ -822,7 +854,7 @@ section {
 
 .process__step {
   text-align: center;
-  padding: 0 16px;
+  padding: 0;
   position: relative;
 }
 
