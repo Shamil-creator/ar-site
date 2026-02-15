@@ -1428,6 +1428,10 @@ section {
     --section-padding: 64px 0;
   }
 
+  .hero__title {
+    font-size: 21px;
+  }
+
   .hero__buttons {
     flex-direction: column;
     align-items: center;
@@ -1479,7 +1483,7 @@ section {
   }
 
   .hero__title {
-    font-size: 32px;
+    font-size: 18px;
   }
 
   .service-card {
