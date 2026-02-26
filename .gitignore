@@ -2,3 +2,7 @@ config.js
 .DS_Store
 .agent
 .agents
+
+# Backend dependencies and secrets
+backend/node_modules/
+backend/.env

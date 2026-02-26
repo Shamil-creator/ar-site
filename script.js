@@ -1,14 +1,5 @@
 // ============================================
-// ARIT — Main Script
-// ============================================
-
-// --- Telegram Bot Config (from old site) ---
-// --- Telegram Bot Config (loaded from config.js) ---
-const TELEGRAM_BOT_TOKEN = typeof CONFIG !== 'undefined' ? CONFIG.TELEGRAM_BOT_TOKEN : '';
-const TELEGRAM_CHAT_ID = typeof CONFIG !== 'undefined' ? CONFIG.TELEGRAM_CHAT_ID : '';
-
-// ============================================
-// Send form data to Telegram
+// Send form data to Telegram via Backend Proxy
 // ============================================
 async function sendToTelegram(name, phone, message) {
   const text = [
@@ -19,22 +10,23 @@ async function sendToTelegram(name, phone, message) {
     message ? `💬 <b>О проекте:</b> ${message}` : '',
   ].filter(Boolean).join('\n');
 
-  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+  // Указываем относительный адрес нашего сервера
+  const url = '/api/send-to-telegram';
 
   try {
     const res = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT_ID,
-        text: text,
+        message: text,
         parse_mode: 'HTML',
       }),
     });
+
     const data = await res.json();
-    return data.ok;
+    return data.success;
   } catch (err) {
-    console.error('Telegram send error:', err);
+    console.error('Backend send error:', err);
     return false;
   }
 }
